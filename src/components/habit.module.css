@@ -1,0 +1,7 @@
+.list {
+  display: flex;
+  align-items: center;
+}
+.count {
+  margin: 0 20px;
+}
