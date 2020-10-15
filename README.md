@@ -1,5 +1,10 @@
 # React Class Component Practice - making Habits Tracker
 
+### 사용
+
+1. 클래스형 컴포넌트
+2. postCSS
+
 ### 구현기능
 
 1. 리스트 추가
