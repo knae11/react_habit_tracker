@@ -1,7 +1,14 @@
 .list {
   display: flex;
+  justify-content: space-between;
+}
+.counter {
+  display: flex;
   align-items: center;
 }
 .count {
   margin: 0 20px;
+}
+.minus {
+  margin: 0 1em;
 }

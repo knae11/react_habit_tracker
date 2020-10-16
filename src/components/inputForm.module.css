@@ -1,1 +1,22 @@
-
+.form {
+  width: 50%;
+  margin: 1rem 0;
+}
+.input {
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 0.2em;
+}
+.button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.2em;
+  margin-left: 0.3rem;
+  border-radius: 5%;
+  background-color: coral;
+  outline: 0;
+  border: 0;
+}
+.button:hover {
+  transform: scale(1.05);
+}

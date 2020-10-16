@@ -8,8 +8,12 @@ class InputForm extends Component {
   render() {
     return (
       <form className={styles.form} onSubmit={this.onSubmit}>
-        <input type="text" placeholder="add something new :-) "></input>
-        <button>ADD</button>
+        <input
+          className={styles.input}
+          type="text"
+          placeholder="add something new :-) "
+        ></input>
+        <button className={styles.button}>ADD</button>
       </form>
     );
   }
