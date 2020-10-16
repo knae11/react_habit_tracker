@@ -1,22 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./inputForm.module.css";
-class InputForm extends Component {
-  onSubmit(event) {
+
+const InputForm = (props) => {
+  const inputRef = React.createRef();
+  const formRef = React.createRef();
+  const onSubmit = (event) => {
     event.preventDefault();
-    console.log("submitted");
-  }
-  render() {
-    return (
-      <form className={styles.form} onSubmit={this.onSubmit}>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="add something new :-) "
-        ></input>
-        <button className={styles.button}>ADD</button>
-      </form>
-    );
-  }
-}
+    const newItem = inputRef.current.value;
+    newItem && props.handleSubmit(newItem);
+    formRef.current.reset();
+  };
+
+  return (
+    <form ref={formRef} className={styles.form} onSubmit={onSubmit}>
+      <input
+        ref={inputRef}
+        className={styles.input}
+        type="text"
+        placeholder="add something new :-) "
+      ></input>
+      <button className={styles.button}>ADD</button>
+    </form>
+  );
+};
 
 export default InputForm;

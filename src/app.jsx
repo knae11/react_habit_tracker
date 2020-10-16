@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Habits from "./components/habits";
 import Navbar from "./components/navbar";
+import InputForm from "./components/inputForm";
 import styles from "./app.module.css";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
       ],
     };
   }
+
   handleMinus = (habit) => {
     const habits = this.state.habits.map((item) => {
       if (item.id === habit.id) {
@@ -32,15 +34,41 @@ class App extends Component {
     });
     this.setState({ habits });
   };
+  handleDelete = (habit) => {
+    const habits = this.state.habits.filter((item) => item !== habit);
+    this.setState({ habits });
+  };
+
+  handleAdd = (item) => {
+    const habits = [
+      ...this.state.habits,
+      { id: Date.now(), title: item, count: 0 },
+    ];
+    this.setState({ habits });
+  };
+  handleReset = () => {
+    const habits = this.state.habits.map((item) => {
+      if (item.count !== 0) {
+        return { ...item, count: 0 };
+      }
+      return item;
+    });
+    this.setState({ habits });
+  };
   render() {
     return (
       <section className={styles.section}>
-        <Navbar />
+        <Navbar
+          navCount={this.state.habits.filter((item) => item.count > 0).length}
+        />
+        <InputForm handleSubmit={this.handleAdd} />
         <Habits
           handleMinus={this.handleMinus}
           handlePlus={this.handlePlus}
+          handleDelete={this.handleDelete}
           habits={this.state.habits}
         />
+        <button onClick={this.handleReset}>Reset</button>
       </section>
     );
   }

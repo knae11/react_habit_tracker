@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
       <header className={styles.header}>
         <h1>Habit tracker</h1>
-        <h1 className={styles.count}>0</h1>
+        <h1 className={styles.count}>{this.props.navCount}</h1>
       </header>
     );
   }
