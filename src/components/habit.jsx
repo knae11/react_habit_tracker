@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import styles from "./habit.module.css";
-class Habit extends Component {
+class Habit extends PureComponent {
   handleMinus = () => {
     this.props.handleMinus(this.props.habit);
   };

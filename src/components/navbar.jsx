@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import styles from "./navbar.module.css";
 
-class Navbar extends Component {
+class Navbar extends PureComponent {
   render() {
+    console.log("header");
     return (
       <header className={styles.header}>
         <h1>Habit tracker</h1>

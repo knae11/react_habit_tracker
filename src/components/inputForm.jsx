@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./inputForm.module.css";
 
-const InputForm = (props) => {
+const InputForm = memo((props) => {
   const inputRef = React.createRef();
   const formRef = React.createRef();
   const onSubmit = (event) => {
@@ -22,6 +22,6 @@ const InputForm = (props) => {
       <button className={styles.button}>ADD</button>
     </form>
   );
-};
+});
 
 export default InputForm;
